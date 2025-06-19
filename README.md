@@ -30,7 +30,8 @@ The Code Researcher Agent is designed to autonomously analyze, understand, and a
 
 2. **Install Dependencies**
    - Add the following to `requirements.txt`:
-     - `openai` (or your preferred LLM API)
+     - `openai`
+     - `agents` (OpenAI Agents SDK)
      - `langchain`
      - `tiktoken`
      - `faiss-cpu` or `chromadb` (for vector search)
@@ -61,6 +62,9 @@ The Code Researcher Agent is designed to autonomously analyze, understand, and a
 ```powershell
 python researcher.py --codebase ./my_project --question "How does authentication work?"
 ```
+The `researcher.py` script orchestrates a Code Research agent using the OpenAI
+Agents SDK. It indexes the specified codebase and answers your question by
+searching and reading relevant files.
 
 ## References
 - [Code Researcher: A Generalist Agent for Automated Code Research (arXiv:2506.11060)](https://arxiv.org/abs/2506.11060)
