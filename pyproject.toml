@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+backend-path = "." # Required for setuptools.build_meta with editable installs
+
+[project]
+name = "code_researcher_agent"
+version = "0.1.0"
+description = "A Code Researcher Agent to analyze and answer questions about codebases."
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT License"} # Or specify file = "LICENSE" if you have one
+authors = [
+  {name = "Your Name / Organization", email = "your@email.com"},
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+dependencies = [
+    "openai",
+    "agents", # Assuming this is the 'openai-agents' SDK
+    "langchain==0.1.20",
+    "chromadb",
+    "faiss-cpu", # or faiss-gpu if preferred
+    "tiktoken",
+    "pygments", # Added as it was mentioned in README for code parsing
+    "rich",     # Added as it was mentioned in README for CLI output
+]
+
+[project.scripts]
+code-researcher = "researcher:main"
+
+[project.urls]
+Homepage = "https://github.com/yourusername/code-researcher-agent" # Replace with actual URL
+Repository = "https://github.com/yourusername/code-researcher-agent" # Replace with actual URL
+
+[tool.setuptools.packages.find]
+where = ["."]  # Tells setuptools to find packages in the current directory
+include = ["code_researcher_agent*"] # Include your package
+exclude = ["tests*"]  # Example: exclude a tests directory if you had one

@@ -1,6 +1,6 @@
 openai
 agents
-langchain==0.1.17
+langchain==0.1.20
 chromadb
 faiss-cpu
 tiktoken
